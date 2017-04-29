@@ -1,0 +1,295 @@
+/*!
+  Inha University in Tashkent
+  Student name: Normurod Mamasoliev;
+  Freshman year  project 2016 April
+  simple bootstrap based cafe project (only frontend)
+*/
+
+/*=======================================================HEAD PART====================================================*/
+
+*{font-size: 16px; }
+body{
+  background:url("../img/wall.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+    }
+  
+#s_icon{width:15p; height: 15px; position: relative; left:-1px; top: -1px;}
+.search-bar{
+  border: 1px solid;
+  border-style: inset; 
+  position: relative;
+  top: 8px;}
+#search-input:focus{
+  box-shadow: 0px 0px 1px 1px inset LightGrey;
+ }
+#search-input{
+  width:260px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding:6px;
+    border-left: 0px solid white;
+    font-size:14px;
+    outline: none;
+    margin-right:0px;}
+#search-button:hover{background-color: Green;
+  color:LightYellow;
+}
+.navbar-brand{font-size: 20px;}
+#search-button:active{background-color: #554e4e; transition:0.4s;}
+#search-button{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding:6px;
+    background-color: Green;
+    color:yellow;
+    width:60px;
+    height:34px;
+    font-size:14px;
+    border-right: 0px solid white;
+    border:none;}
+.nav li:hover{background-color: #3e3d3d; transition:0.3s;}
+.cash-bar{margin-right: auto; 
+  margin-left: auto; 
+  background-color: transparent; 
+  position: relative; top:-8px; 
+  padding:3px; color: Yellow; 
+  width:180px;
+  border:1px solid black;
+
+  box-shadow: 0px 0px 1px black;
+  text-align: center;}
+.cash-bar input{background-color: transparent;width: 85px; padding-top: 3px; border-top: 0px solid; border-bottom: 0px solid;}
+
+/*--------------------------------------------------------------------MAIN BAR=--------------------------------------------*/
+  
+.main-bar{height:1000px; background-color: white;
+    padding:0px;
+    height:866px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    color: inherit;
+    background-attachment: bottom;
+    background-color: #eee;
+    border-radius: 6px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    height:866px;
+   
+     }
+.product{
+  width: 270px;
+  height:320px;
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  top:0px;
+  left: 0px;
+  float: left;
+  border-radius: 3px;
+  border: 1px outset #766b6b;
+  margin-bottom: 0px;
+  margin-left: 12px;  
+  margin-top: 12px;
+  overflow: hidden;
+  z-index: 0;
+    }
+  .product:hover{
+    background-size: none;
+  }
+.product-title-bar span{color:white;}
+.product-title-bar{
+  opacity: 0.7;  
+  background-color: #222222;
+  font-color:white;
+  font-size: 18px;
+ 
+  text-align:center;
+  padding:5px;
+  border-radius: 3px;
+  margin-bottom: 0px;
+    }
+#btn-add-to-wishlist{border-radius: 5px; border: 1px groove Blue; background-color: LightGrey;}
+#btn-add-to-wishlist:hover{background-color: LightGreen;}
+#btn-add-to-wishlist-active{background-color: Green;border-radius: 5px; border: 1px groove Blue;}
+#btn-add-to-wishlist:focus{outline-width: 0px;}
+#title-bar-container{border:0px solid black; height: 95px;}
+.book-btn{
+  padding-top: 18px;
+  height:70px;
+  width:80px;
+  background-color: LightBlue;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 6px;
+  position:relative;
+  top:153px;
+  left:0px;
+  box-shadow: 0px 0px 3px black;
+  font-size: 24px;
+    }
+.book-btn:hover{background-color: LightGreen;  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0px 0px 2px Grey;
+  border-radius: 200px 200px 200px 9px;
+  font-size:25px;
+  -moz-border-radius: 200px 200px 200px 9px;
+  -webkit-border-radius: 200px 200px 200px 9px;
+  border: 1px solid #574157;
+  -webkit-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.9);
+  -moz-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.9);
+  transition:.3s;
+    }
+.booked-btn{
+  padding-top: 22px;
+  height:70px;
+  width:80px;
+  background-color: LightGreen;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 6px;
+  position:relative;
+  top:153px;
+  left:0px;
+  box-shadow: 0px 0px 3px black;
+  font-size: 20px;
+    }    
+.text-bar{
+  resize:horizontal;
+  height:866px;
+  background-color: #e8e8e8;
+  border-radius: 6px;
+  margin-bottom:15px; 
+    }
+.text-bar table{margin-right: auto;
+ margin-left: auto;
+ position: relative;
+ top:13px;
+ float:left;
+ background-color: #f5f6f6;
+ font-weight: bold;
+ letter-spacing: 2px;
+ margin-bottom: 15px;
+ border-radius: 6px;}
+.text-bar td{margin-right: auto;
+ border-radius: 6px;
+ margin-left: auto;
+ height:80px;
+ border-top:1px inset #69d4eb; 
+ border-bottom:1px outset #69d4eb;
+ text-shadow:1px 0px 0px black;
+ cursor: default;
+ text-align: center;
+ margin-bottom:10px;
+ margin-top: 10px;}
+#side-bar{position: fixed; top:350px; left:0px; width:100px; height:200px; background-color: transparent;}
+#side-bar li{z-index: 9999999; list-style-type: none; width:80px; background-color: #edfaa3; border:1px solid Grey; 
+  border-bottom-width:0px;  position: relative; left:-40px; 
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding:2px;
+  text-align: center;
+    }
+#side-bar li:last-child{border-bottom-width:1px; }
+#side-bar li:active{outline:0px; border:0px solid transparent;}
+#side-bar li:hover{box-shadow:1px 1px 1px black; cursor: pointer; width:100px; transition:.3s; background-color: LightGrey;}
+#cash{ width:80px; border-width:0px; padding-left:8px; padding-top: 2px; background-color: Green; 
+  color:Yellow;position: relative; top:10px;left:-40px; border-top-left-radius: 3px;
+  border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px;
+    }
+#cash:hover{font-size: 17px; cursor: pointer;}
+#wishlist{
+  position:fixed;
+  top:130px;
+  left:-0px;
+  height:300px;
+  width:100px;
+  background-color: transparent;
+  border:1px solid black;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 6px;
+  padding:2px;}
+#title-for-social{position: relative; top:10px;}
+#social{position: relative; top:-10px;}
+#social button{background-color: Green; font-size: 21px; 
+  color:Yellow; width:35px;  
+  border:1px solid Blue; margin:2px;
+  border-radius: 3px;}
+#wishlist div{background-color: white; 
+  resize:vertical; width:96px; height:265px;
+  border-radius: 6px; position: relative; top:-8px; }
+#wishlist p{  box-shadow: 1px 1px 1px black;color: white; 
+  resize:horizontal; border:1px solid Grey; 
+  border-radius: 6px; 
+  padding:2px; text-align: center; 
+  background-color: transparent;}
+
+/*----------------------------------------------------------------------FOOTER BAR--------------------------------------------*/
+
+footer{
+ margin-top: -10px;
+ font-color:green;
+  }
+.jumbotron{
+  background-color:#e8e8e8;
+  }
+
+  /*====================================================================ADDITIONALS===========================================*/
+
+.dialog-window{ background-color:#e8e8e8;
+  min-width:300px;
+  resize:vertical;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 999999999999;
+  border:4px solid #2b2929;}
+
+.title-for-dialog-window{   z-index: 999999999;background-color: #2b2929; padding-bottom: 5px; vertical-align: center;  position: relative; top:0px; }
+.title-for-dialog-window p{display: inline; color: LightGrey; position: relative; left:3px;}
+.title-for-dialog-window button{float: right; padding-left:8px; padding-right:8px; padding-bottom:-2px;
+  padding-top:-2px; background-color: #c75050; border:0px solid;}
+.title-for-dialog-window button:hover{background-color: #c61f1f; transition:0.2s; color: white;}
+.title-for-dialog-window button:focus{outline-width: 0px;background-color: #c75050;}
+.title-for-dialog-window button:active{background-color: ##a91e1e;}
+
+.container-for-dialog{
+  background-color: #e8e8e8;
+  resize:horizontal;
+  resize:vertical;
+  min-height: 200px;
+  min-width: 600px;
+  text-align: center;
+  padding:10px;
+  padding-top: 40px;
+    z-index: 99999999999999999999999;
+}
+.dialog-background{
+  position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    opacity:1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+   scroll-behavior: none;
+}
+#vid{
+  background-color: Black;
+  width:760px;
+  height:320px;
+}

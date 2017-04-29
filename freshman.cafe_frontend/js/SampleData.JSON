@@ -1,0 +1,29 @@
+{"fastfood":{
+	"id":["1","2","3","4","5","6","7","8"],
+	"name":["Hamburger","Hot-dog","Cheeseburger","Nonburger","Sandvich","Lavash","Rolton","Canadian hot-dog"],
+	"cost":[5000,4000,6000,4000,6000,7000,3000,5000],
+	"image":["url('img/1.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/2.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat"
+	]
+},
+"drinks":{
+	"id":["1","2","3","4","5","6","7","8"],
+	"name":["Hamburger","Hot-dog","Cheeseburger","Nonburger","Sandvich","Lavash","Rolton","Canadian hot-dog"],
+	"cost":[5000,4000,6000,4000,6000,7000,3000,5000],
+	"image":["url('img/1.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/2.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat",
+	"url('img/hamburger.jpg') no-repeat"
+	]
+}
+}
