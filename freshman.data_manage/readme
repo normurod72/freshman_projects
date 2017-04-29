@@ -1,0 +1,3 @@
+first configure /config/head.php
+then import /db/data_db.sql 
+to your mysql db
