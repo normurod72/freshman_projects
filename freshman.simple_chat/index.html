@@ -1,0 +1,296 @@
+<!-- 
+/*!
+	Inha University in Tashkent 
+	Student name: Normurod Mamasoliev;
+	Freshman year project 2016 July
+	Simple project made on pure PHP
+	very simple chat that no database requires 
+*/
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<title>CHAT</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+			
+		function set(e){
+			$("#image-viewer").show();
+	        $("#image-viewer img").attr('src',"uploads/"+e.innerText.split(' ').join(''));
+    	}
+    	 $(".file").click(function(e){
+	        alert();
+	    });
+
+		$.ajax({
+			url:"history.html",
+			type:"post",
+			cache:false,
+			data:{
+				get_history:1
+			}
+		}).done(function(data){
+			$("#message-container").append(data);
+		});
+
+		setInterval(function(){
+			
+			$.ajax({
+				url:"data.json",
+				dataType:"json",
+				type:"post",
+				cache:false
+			}).done(function(data){
+				
+				$('.col-md-6').removeClass('new-msg');
+				if(!data.file){
+					$("#message-container").prepend('<div class="col-md-6 new-msg"><h3><b>Name: </b> '+data.name+'</h3><p><b>Message: </b>'+data.message+'</p></div>');
+				}else{
+					if(data.type=='image/gif' || data.type=='image/jpeg' || data.type=='image/x-icon' || data.type=='image/png'){
+
+						$("#message-container").prepend('<div class="col-md-6 new-msg"><h3><b>Name: </b> '+data.name+'</h3><p><b>Message: </b>'+data.message+'</p><div><p onclick="set(this)" class="file"><span class="glyphicon glyphicon-download"></span> '+data.file+'</p></div></div>');
+
+					}else{
+
+						$("#message-container").prepend('<div class="col-md-6 new-msg"><h3><b>Name: </b> '+data.name+'</h3><p><b>Message: </b>'+data.message+'</p><div><a download href="uploads/'+data.file+'"><span class="glyphicon glyphicon-download"></span> '+data.file+'</a></div></div>');
+
+					}
+				}
+
+				setTimeout(function(){
+
+					$.ajax({
+						url:"write.php",
+						type:"post",
+						cache:false,
+						data:{
+							come:1
+						}
+					}).done(function(){
+						$('form input[name="send"]').val("send");
+						$('form input[name="send"]').removeClass('disabled');
+					});
+					
+				},100);
+			});
+
+		},2000);
+			
+	</script>
+</head>
+<body>
+
+			<div id="asker" style="background-color: rgba(0,0,0,0.96);position: absolute; top:0; bottom: 0; left: 0; right: 0; z-index: 999999999999; padding: 40px;">
+				<input type="text" id="name_id" name="name"  autofocus placeholder="Type your nickname here and press enter" style="width: 100%;
+    position: relative;
+    top: 50%;
+    font-family: cursive;
+    color: white;
+    font-size: 50px;
+    border-bottom: 2px solid white !important;
+    border: 0;
+    background-color: rgba(14, 14, 14, 0.89);
+    padding: 10px;">
+    <style type="text/css">
+    	#name_id:focus{
+    		outline:none;
+    	}
+    </style>
+    <script type="text/javascript">
+    $(function(){
+    	$("#name_id").keydown(function(e){
+    		if(e.which==13&&$(this).val().length!=0){
+    			$("#nickname").html($(this).val());$("#nicknamevalue").val($(this).val());
+    			$("#asker").hide();
+    		}
+    	});
+    	$("#close-image-viewer").click(function(){
+    		$("#image-viewer").hide();
+    	});
+    })
+    </script>
+			</div>
+	
+			
+			<div style="width: 400px; padding: 15px; background-color: rgba(0,0,0,0.8); position: fixed; bottom: 0px;right: 0px; top: 0px; color: white; backdrop-filter: blur(10px);">
+			
+				<form role="form" enctype="multipart/form-data" method="post">
+					
+					<div class="form-group">
+						
+						<center><h2 style="text-transform: uppercase;" id="nickname">You Hacked</h2></center>
+						<input style="display: none;" type="text" name="name" id="nicknamevalue" value="Hacker" class="form-control">
+
+					</div>
+
+					<div class="form-group">
+						
+						<label for="name">Upload (limit 32mb)</label>
+						
+						<input type="file" name="file" placeholder="file size limit 32mb" class="form-control">
+
+					</div>
+
+					<div class="form-group">
+						
+						<label for="message">Message</label>
+
+						<textarea name="message" rows="6" class="form-control"></textarea>
+
+					</div>
+
+					<input style="margin: 5px; float: right;" type="submit" name="send" value="Send" class="btn btn-large btn-primary">
+
+				</form>
+
+				<hr style="width: 100%;">
+
+				<h4>If you like this, see my other projects as well</h4>
+				
+				<ul>
+				
+					<li><a href="https://github.com/normurod72/startup">Startup Website</a></li>
+				
+					<li><a href="https://github.com/normurod72/webos">Web application like OS</a></li>
+				
+					<li><a href="https://github.com/normurod72/asynctable">Data Storage view</a></li>
+				
+					<li><a href="https://github.com/normurod72/servicemanagement">PHP service application</a></li>
+
+					<li><a href="https://github.com/normurod72/nodejschat">Node.JS messenger</a></li>
+				
+				</ul>
+
+				<a href="simple_chat_source.zip" download="download" style="width: 100%; margin-bottom: 20px;" class="btn btn-large btn-success">Download source code <span class="glyphicon glyphicon-download"></span></a>
+
+				<a href="https://github.com/normurod72/simplechat" style="width: 100%;" class="btn btn-large btn-success">View on Github <span class="glyphicon glyphicon-link"></span></a>
+
+			</div>
+
+
+	
+
+	
+		
+		<div id="message-container" style=" word-wrap: break-word;   position: absolute;    right: 410px;    left: 0px;">
+
+		</div>
+
+	
+	<div id="image-viewer" style="position: absolute;
+    top: 100px;
+    display: none;
+    bottom: 100px;
+    overflow: scroll;
+    box-shadow: 0px 0px 100px 20px;
+    right: 100px;
+    left: 100px;
+    background-color: #080101;"><span id="close-image-viewer" style="float: right;
+    color: white;
+    background-color: #ff0030;
+    padding: 10px;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;"> x </span>
+		
+		<img src="#" class='img-responsive'>
+
+	</div>
+
+	<script type="text/javascript">
+	var files; var file_type;
+	$('form input[name="file"]').on('change',function(event){
+		files = event.target.files;
+		if(files[0].size){
+
+			if(files[0].size>32000000){
+				alert("This file is too big!");
+				$('form input[name="file"]').val("");
+			}else{
+				file_type=files[0].type;
+			}
+
+		}
+	});
+
+		$('form input[name="send"]').on('click',function(e){
+								
+			$('form input[name="send"]').val("sending...");
+			$('form input[name="send"]').addClass('disabled');
+			e.preventDefault();
+
+			if($('form input[name="file"]').val()!=''){
+	
+				var form_data = new FormData();
+
+			    $.each(files, function(key, value)
+			    {
+			        form_data.append(key, value);
+			    });
+
+			    $.ajax({
+					url:"write.php?files",
+					type:"post",
+					cache:false,
+					contentType:false,
+					processData:false,
+					asynch:false,
+					data:form_data
+				}).done(function(data){
+					console.log(data);
+					$('form input[name="name"]').val("");
+					$('form textarea[name="message"]').val("");
+					$('form input[name="file"]').val("");
+				}).fail(function(xhr){
+					console.log(xhr);
+				});
+
+				$.ajax({
+					url:"write.php",
+					type:"post",
+					cache:false,
+					data:{
+						do:1,
+						sender:$('form input[name="name"]').val(),
+						message:$('form textarea[name="message"]').val(),
+						file:files[0].name,
+						type:file_type
+					}
+				}).done(function(dat){
+					$('form input[name="name"]').val("");
+					$('form textarea[name="message"]').val("");
+					$('form input[name="file"]').val("");
+					console.log(dat);
+				});
+			}else{
+				$.ajax({
+					url:"write.php",
+					type:"post",
+					cache:false,
+					data:{
+						go:1,
+						sender:$('form input[name="name"]').val(),
+						message:$('form textarea[name="message"]').val()
+					}
+				}).done(function(data){
+					$('form input[name="name"]').val("");
+					$('form textarea[name="message"]').val("");
+					$('form input[name="file"]').val("");
+				});
+			}		
+			
+		});
+
+	</script>
+</body>
+</html>

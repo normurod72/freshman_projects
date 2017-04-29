@@ -1,0 +1,41 @@
+/*!
+	Inha University in Tashkent 
+	Student name: Normurod Mamasoliev;
+	Freshman year project 2016 July
+	Simple project made on pure PHP
+	very simple chat that no database requires 
+*/
+
+.col-md-6{
+	box-shadow: 1px 1px 3px 1px #545353;
+    margin-top: 10px;
+    margin:5px;
+    background-color: rgba(0,0,0,0.2);
+    color:white;
+    width: 100% !important; 
+}
+
+@media (min-width: 992px){
+	.col-md-6 {
+	    width: 100% !important;
+	}
+}
+
+
+.new-msg{
+	background-color: rgba(60, 105, 105, 0.48) !important;
+}
+
+body,html{
+	background:url("../images/1.jpg") center center fixed;
+	background-repeat: no-repeat;
+}
+
+.col-md-6 .file{
+	color:aqua;
+}
+.col-md-6 .file:hover{
+	cursor: pointer;
+	color:aquamarine;
+	text-decoration: underline;
+}
